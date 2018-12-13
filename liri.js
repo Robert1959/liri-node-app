@@ -4,14 +4,14 @@ const keys = require('./keys.js');
 const Spotify = require('node-spotify-api');
 const spotify = new Spotify(keys.spotify);
 const request = require('request');
+const fs = require("fs");
 const action = process.argv[2];
 let searchInfo = process.argv.slice(3).join(' ');
 const artist = searchInfo;
 const song = searchInfo;
 const movieName = searchInfo;
 
-const findArtist = function(artist){
-
+const findArtist = function(artist) {
 
 const URL = `https://rest.bandsintown.com/artists/${artist}/events/?app_id=codingbootcamp`;
     request(URL, function (err, response, body) {
@@ -20,22 +20,19 @@ const URL = `https://rest.bandsintown.com/artists/${artist}/events/?app_id=codin
 }
 else {
 
-  const dataList = JSON.parse(body);
-
-console.log('==============================================');
-console.log(`Artist Name ${searchInfo}`);
-
-for (i=0; i < dataList.length; i++) {
-
-  console.log(dataList[i].venue.name);
-
+const dataList = JSON.parse(body);
+ for (i=0; i < dataList.length; i++) {
+  fs.appendFile('./log.txt');
+  //console.log('==============================================');
+  //console.log(`Artist: ${searchInfo}`);
+  //console.log(dataList[i].venue.name);
+  //console.log(dataList[i].venue.city);
+  //console.log('==============================================');
+  } 
 }
-
-console.log('==============================================');
-};
-
+  
 });
-}
+
 const movieThis = function(movie){
 
 
@@ -111,3 +108,4 @@ console.log(JSON.stringify(data.movies.items[0], null, 2));
 // process.argv[?]
 
 
+}
