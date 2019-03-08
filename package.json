@@ -1,8 +1,8 @@
 {
   "name": "liri-node-app",
   "version": "1.0.0",
-  "description": "Liri Mime",
-  "main": "index.js",
+  "description": "spotofy-everything",
+  "main": "keys.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,15 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/Robert1959/liri-node-app.git"
   },
-  "author": "Robert Ferguson <robert.ferguson@ge.com>",
+  "author": "robert ferguson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Robert1959/liri-node-app/issues"
   },
-  "homepage": "https://github.com/Robert1959/liri-node-app#readme",
-  "dependencies": {
-    "dotenv": "^6.2.0",
-    "node-spotify-api": "^1.0.7",
-    "request": "^2.88.0"
-  }
+  "homepage": "https://github.com/Robert1959/liri-node-app#readme"
 }
